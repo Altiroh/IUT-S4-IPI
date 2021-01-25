@@ -57,7 +57,13 @@ def nb_succD(dico,som):
     nb=len(listSucc[0])
     return nb
 
+def mat_adj(dico):
+    mat=[]
+    for i in dico:
+        mat.append(dico[i])
+    return mat
 
 print(succD(G,2))
 print(nb_succD(G,2))
 #print(predD(G,3))
+print(mat_adj(G))
