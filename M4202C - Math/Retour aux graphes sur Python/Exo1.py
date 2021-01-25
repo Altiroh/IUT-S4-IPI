@@ -30,3 +30,5 @@ def nb_pred(mat,som):
 
 print(succ(mat1,2))
 print(nb_succ(mat1,2))
+print(pred(mat1,2))
+print(nb_pred(mat1,2))
