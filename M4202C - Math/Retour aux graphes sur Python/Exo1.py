@@ -45,10 +45,10 @@ def predD(dico,som):
     
     for i, som in dico.items():
         listPred.append(dico[i])
-    for i in range (len(listPred)):
-            if listPred[i]==som: #vérification de l'existence d'un pred
+    for i in range (len(listPred[som])):
+            if listPred[som][i]==1  : #vérification de l'existence d'un pred
                 listpred.append(i)
     return listpred
 
 print(succD(G,2))
-print(predD(G,2))
+print(predD(G,3))
