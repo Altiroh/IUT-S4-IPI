@@ -11,21 +11,21 @@ def succ(mat,som):
 def nb_succ(mat,som):
     nb=0
     for i in range (len(mat[som])):
-            if mat[som][i]==1: #vérifiacation de l'existence d'un successeur
+            if mat[som][i]==1: #vérification de l'existence d'un successeur
                 nb=nb+1
     return nb
 
 def pred(mat,som):
     listPred=[]
     for i in range (len(mat[som])):
-            if mat[i][som]==1: #vérifiacation de l'existence d'un successeur
+            if mat[i][som]==1: #vérification de l'existence d'un pred
                 listPred.append(i)
     return listPred
 
 def nb_pred(mat,som):
     nb=0
     for i in range (len(mat[som])):
-            if mat[i][som]==1: #vérifiacation de l'existence d'un successeur
+            if mat[i][som]==1:
                 nb=nb+1
     return nb
 
@@ -33,10 +33,22 @@ def nb_pred(mat,som):
 #print(nb_succ(mat1,2))
 #print(pred(mat1,2))
 #print(nb_pred(mat1,2))
-
+    
 def succD(dico,som):
     listSucc=[]
     listSucc.append(dico[som])
     return listSucc
 
+def predD(dico,som):
+    listPred=[]
+    listpred=[]
+    
+    for i, som in dico.items():
+        listPred.append(dico[i])
+    for i in range (len(listPred)):
+            if listPred[i]==som: #vérification de l'existence d'un pred
+                listpred.append(i)
+    return listpred
+
 print(succD(G,2))
+print(predD(G,2))
