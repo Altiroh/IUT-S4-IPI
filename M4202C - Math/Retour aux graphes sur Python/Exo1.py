@@ -39,16 +39,25 @@ def succD(dico,som):
     listSucc.append(dico[som])
     return listSucc
 
-def predD(dico,som):
-    listPred=[]
-    listpred=[]
+#def predD(dico,som):
+    #listPred=[]
+   # listpred=[]
     
-    for i, som in dico.items():
-        listPred.append(dico[i])
-    for i in range (len(listPred[som])):
-            if listPred[som][i]==1  : #vérification de l'existence d'un pred
-                listpred.append(i)
-    return listpred
+   # for i, som in dico.items():
+  #      listPred.append(dico[i])
+   # for i in range (len(listPred[som])):
+   #         if listPred[som][i]==1  : #vérification de l'existence d'un pred
+   #             listpred.append(i)
+  #  return listpred
+
+def nb_succD(dico,som):
+    listSucc=[]
+    nb=0
+    listSucc.append(dico[som])
+    nb=len(listSucc[0])
+    return nb
+
 
 print(succD(G,2))
-print(predD(G,3))
+print(nb_succD(G,2))
+#print(predD(G,3))
