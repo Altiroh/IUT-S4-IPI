@@ -1,4 +1,4 @@
-mat1=[[0,0,0,1],[0,0,1,0],[0,0,1,1],[1,1,1,1]]
+mat1=[[1,0,0,0],[0,0,1,0],[0,0,0,1],[1,0,1,1]]
 G={1:[1,2],2:[2,3,4],3 :[],4 :[2]}
 
 def succ(mat,som):
@@ -66,7 +66,19 @@ def mat_adj(dico):
     return mat_adj
     
 
-print(succD(G,2))
-print(nb_succD(G,2))
+#print(succD(G,2))
+#print(nb_succD(G,2))
 #print(predD(G,3))
-print(mat_adj(G))
+#print(mat_adj(G))
+
+def warshall(mat):
+    for k in range(len(mat)):
+        for i in range(len(mat)):
+            for j in range(len(mat)):
+                if (mat[i][j]==1 or (mat[i][k]==1 and mat[k][j]==1)):
+                    mat[i][j]=1
+                else:
+                    mat[i][j]=0
+    return mat
+
+print(warshall(mat1))
