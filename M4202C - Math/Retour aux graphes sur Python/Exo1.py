@@ -1,4 +1,4 @@
-mat1=[[1,0,0,0],[0,0,1,0],[0,0,0,1],[1,0,1,1]]
+mat1=[[1,0,0,0],[0,0,0,0],[0,0,0,0],[0,0,0,0]]
 G={1:[1,2],2:[2,3,4],3 :[],4 :[2]}
 mat2=[[0,1,0,1,0,0],[0,0,0,0,0,0],[0,1,0,0,1,0],[0,0,0,0,0,1],[0,0,1,1,0,0],[0,0,0,0,0,0]]
 
@@ -82,4 +82,25 @@ def warshall(mat):
                     mat[i][j]=0
     return mat
 
-print(warshall(mat2))
+#print(warshall(mat2))
+
+def parcoursL(mat):
+    Pred=[-1]*len(mat)
+    Vu=[-1]*len(mat)
+    file=[]
+    for s in range(len(mat)):
+        Pred[s]=None
+        Vu[s]=False
+    Vu[s]=True
+    file.append(s)
+    while file!=[]:
+        file.remove(s)
+    for i in range (len(mat[s])):
+        file.append(i)
+        Vu[i]=True
+        Pred[i]=s
+    return Pred
+    
+        
+
+print(parcoursL(mat1))
