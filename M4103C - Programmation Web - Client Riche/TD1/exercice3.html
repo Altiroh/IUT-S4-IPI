@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <header>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="author" content="Ewen Blandin">
+        <meta name="description" content="Exercice 3 du TD1">
+        <style>
+            html{background-color: black;color: green;} 
+        </style>
+    </header>
+    <body>
+        <script lang="Javascript">
+            /* b) Déclaration des tableaux*/
+                //Premier tableau (Tableau des mois de l'années)
+                var tabMois = new Array("Janvier","Février","Mars","Avril","Mai","Juin","Juillet","Aout","Septembre","Octobre","Novembre","Décembre");
+
+                //Deuxieme tableau (Tableau du nombre de jours)
+                var tabNombre = new Array(31,28,31,30,31,30,31,31,30,31,30,31);
+            /*Exploitation des tableaux créer*/
+                var lgTabMois=tabMois.length;//Longueur du tableau en question
+                var lgTabNombre=tabNombre.length;
+
+                document.write("<table><tbody><tr>");
+                for(i=0;i<lgTabMois;i++)
+                {
+                    document.write("<td>",tabMois[i],"</td>");
+                }
+                document.write("</tr><tr>");
+                    for(i=0;i<lgTabNombre;i++)
+                {
+                    document.write("<td>",tabNombre[i],"</td>");
+                }
+                document.write("</tr></tbody></table>");
+        </script>
+        <!-- a) <table>
+            <tbody>
+                <tr>
+                    <td>Janvier</td>
+                    <td>Fevrier</td>
+                    <td>Mars</td>
+                    <td>Avril</td>
+                    <td>Mai</td>
+                    <td>Juin</td>
+                    <td>Juillet</td>
+                    <td>Aout</td>
+                    <td>Septembre</td>
+                    <td>Octobre</td>
+                    <td>Novembre</td>
+                    <td>Decembre</td>
+                  </tr>
+                  <tr>
+                    <td>31</td>
+                    <td>28</td>
+                    <td>31</td>
+                    <td>30</td>
+                    <td>31</td>
+                    <td>30</td>
+                    <td>31</td>
+                    <td>31</td>
+                    <td>30</td>
+                    <td>31</td>
+                    <td>30</td>
+                    <td>31</td>
+                  </tr>
+              
+            </tbody>
+        </table>-->
+    </body>
+</html>
