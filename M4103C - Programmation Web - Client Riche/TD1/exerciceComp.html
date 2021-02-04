@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <header>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="author" content="Ewen Blandin">
+        <meta name="description" content="Exercice Complémentaire du TD1">
+        <style>
+            html{background-color: black;color: green;}
+            td{border: 1px solid green;} 
+        </style>
+    </header>
+    <body>
+        <script lang="Javascript">
+            var tabChiffre = new Array();//Tableau à remplir
+            var maxTab=10;
+            //Remplissage du tableau
+            for(var i=0; i<maxTab; i++){tabChiffre.push(Math.round(Math.random() *99))}
+            document.write("<h1>===Tableau de 10 chiffres aléatoires:</h1></br>");
+
+            document.write("<table><tbody><tr>");
+            for(i=0;i<maxTab;i++)
+            {
+                document.write("<td>",tabChiffre[i],"</td>");
+            }
+            document.write("</tr></tbody></table><br>");             
+            document.write("<h1>===Tableau trié une première fois:</h1></br>"); 
+            tabChiffre.sort();
+            // sort convertit en chaine de caractère soit 80 arrivera avant 9 dans l'ordre lexicographique / alphanumerique.
+            document.write("<table><tbody><tr>");
+            for(i=0;i<maxTab;i++)
+            {
+                document.write("<td>",tabChiffre[i],"</td>");
+            }
+            document.write("Ordre lexicographique !</tr></tbody></table><br>");  
+            //Fonction de comparaison pour trier correctement les numéros.
+            function compareNombres(a, b){return a - b;}
+            document.write("<h1>===Tableau trié une seconde fois:</h1></br>"); 
+            tabChiffre.sort(compareNombres);
+            document.write("<table><tbody><tr>");
+            for(i=0;i<maxTab;i++)
+            {
+                document.write("<td>",tabChiffre[i],"</td>");
+            }
+            document.write("Ordre numérique !</tr></tbody></table><br>");
+
+            /*
+            En conclusion:
+                Pour trier un tableau l'on utilise la fonction sort(), qui va convertir le contenu
+                en chaine de caractère. Donc là on doit passer par une propriété de comparaison.
+                Cela va comparer les chiffres non plus par chaine de caractère mais numériquement.
+            */  
+        </script>
+    </body>
+</html>
