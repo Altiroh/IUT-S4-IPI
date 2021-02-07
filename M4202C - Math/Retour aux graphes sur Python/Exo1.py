@@ -1,3 +1,6 @@
+import math
+from collections import deque
+
 mat1=[[1,0,0,0],[0,0,0,0],[0,0,0,0],[0,0,0,0]]
 G={1:[1,2],2:[2,3,4],3 :[],4 :[2]}
 mat2=[[0,1,0,1,0,0],[0,0,0,0,0,0],[0,1,0,0,1,0],[0,0,0,0,0,1],[0,0,1,1,0,0],[0,0,0,0,0,0]]
@@ -136,6 +139,19 @@ def decomN(mat):
                 niv[j]=niv[i]+1
                 file.append(j)
     return file
-        
+
+def dijkstra(graph, vertex):
+    queue = deque([vertex])
+    distance = {vertex: 0}
+    while queue:
+        t = queue.popleft()
+        for voisin in graph[t]:
+                queue.append(voisin)
+                nouvelle_distance = distance[t] + graph[t][voisin]
+                if(voisin not in distance or nouvelle_distance < distance[voisin]):
+                    distance[voisin] = nouvelle_distance
+                    
+    return distance
+            
 
 print(parcoursL(mat1))
