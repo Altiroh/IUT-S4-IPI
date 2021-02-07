@@ -100,7 +100,42 @@ def parcoursL(mat):
         Vu[i]=True
         Pred[i]=s
     return Pred
-    
+
+def parcoursP(mat):
+    Pred=[-1]*len(mat)
+    Vu=[-1]*len(mat)
+    pile=[]
+    for s in range(len(mat)):
+        Pred[s]=None
+        Vu[s]=False
+    Vu[s]=True
+    pile.append(s)
+    while pile!=[]:
+        pile.remove(len(pile))
+    for i in range (len(mat[s])):
+        pile.append(i)
+        Vu[i]=True
+        Pred[i]=s
+    return Pred
+
+def decomN(mat):
+    nbPred=[-1]*len(mat)
+    niv=[-1]*len(mat)
+    file=[]
+    for i in range (len(mat)):
+        niv[i]=None
+        nbPred[i]=len(nb_pred(mat,i))
+        if nbPred[i]==0:
+            niv[i]=0
+            file.append(i)
+    while file!=[]:
+        file.remove[i]
+        for j in range (len(mat[i])):
+            nbPred[j]=nbPred[j]-1
+            if nbPred[j]==0:
+                niv[j]=niv[i]+1
+                file.append(j)
+    return file
         
 
 print(parcoursL(mat1))
