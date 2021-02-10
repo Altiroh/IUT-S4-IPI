@@ -5,7 +5,7 @@ import javax.swing;ImageIcon; //Image
 import java.awt.GridLayout; //Placement en tableau 1x1
 import java.awt.FlowLayout; // Ou placement en flow 1 élément
 
-public class AfficheImmage; // Interface => hérite de JFRAME{
+public class AfficheImmage{ // Interface => hérite de JFRAME
 
 private JLabel ecran; //Cette Interface ne contient qu'un JLabel pour une image
  
