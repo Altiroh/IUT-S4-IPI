@@ -127,7 +127,7 @@ def decomN(mat):
     file=[]
     for i in range (len(mat)):
         niv[i]=None
-        nbPred[i]=len(nb_pred(mat,i))
+        nbPred[i]=nb_pred(mat,i)
         if nbPred[i]==0:
             niv[i]=0
             file.append(i)
@@ -154,4 +154,4 @@ def dijkstra(graph, vertex):
     return distance
             
 
-print(parcoursL(mat1))
+print(decomN(mat1))
