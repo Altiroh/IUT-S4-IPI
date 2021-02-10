@@ -9,10 +9,11 @@ public class AfficheImmage; // Interface => hérite de JFRAME{
 
 private JLabel ecran; //Cette Interface ne contient qu'un JLabel pour une image
  
-public AffichageImage (String monImage){ //interface d'affichage recoit le nom du fichier image
+public AffichageImage (String monImage)
+{ //interface d'affichage recoit le nom du fichier image
     super(monImage); //Nom du fichier image en titre
     setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);//arrêt du programme si fermeture
-//GridLayout placeur = new GridLayout(1,1,2,2); //Placement en tableau(GridLayout)
+    //GridLayout placeur = new GridLayout(1,1,2,2); //Placement en tableau(GridLayout)
     FlowLayout placeur = new FlowLayout(FlowLayout.CENTER, 20, 40); //Placement FlowLayout
     getContentPane().setLayout(placeur);//PLacement dans le conteneur de la fenêtre
 
@@ -23,8 +24,8 @@ public AffichageImage (String monImage){ //interface d'affichage recoit le nom d
     setVIsible(true);//Fenêtre visible
 }
 
-public static void main(String argv[]){ //Démarrage du programme
+public static void main(String argv[])
+{   //Démarrage du programme
     new AffichageImage("Elephant.gif"); //Créatiopn de la fenêtre
     //new AffichageImage("Koala.gif");
-}
 }
