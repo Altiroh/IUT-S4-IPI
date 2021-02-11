@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <header>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="author" content="Ewen Blandin">
+        <meta name="description" content="Exercice 5 du TP1">
+        <style>
+            html{background-color: black;color: green;}
+            td{border: 1px solid green;}
+        </style>
+        <script lang="Javascript">
+            /*function afficherTable(n) //Affichage d'une table en particulier
+            {
+                for( var i = 0 ; i <= 9 ; i++)
+                {
+                  resultat = i*n;
+                  document.write("<p>",i," * ",n," = ",resultat,"<br></p>");
+                }
+             }
+             function afficherTables()
+             {
+                 for(var j = 0 ; j < = 9 ; j ++)
+                 {
+                     afficherTable(j);
+                 }
+             }*/
+             function afficherTable(nb) {
+                n = parseInt(nb);
+                if (!isNaN(n)) {
+                    for (var i = 1; i < n+1; i++) {
+                        document.write("<br>Table de " + i + ":<br>");
+                        for (var j = 1; j <= 10; j++) {
+                            document.write(j + " x " + i + " = " + j*i + "<br>");
+                        }
+                    }
+                } else {
+                    alert("Il n'existe pas de table de multiplication de \"" + nb + "\" ...");
+                }
+            }
+             afficherTable(44);
+
+        </script>
+    </header>
+    <body>
+
+        <!--<p>
+        1 x null = 0<br>
+        2 x null = 0<br>
+        3 x null = 0<br>
+        4 x null = 0<br>
+        5 x null = 0<br>
+        6 x null = 0<br>
+        7 x null = 0<br>
+        8 x null = 0<br>
+        9 x null = 0<br>
+        10 x null = 0
+        <p>-->
+    </body>
+</html>
