@@ -1,0 +1,66 @@
+<html>
+	<head>
+        <title>Jour de votre naissance</title>
+        <style>
+            html{
+                background: linear-gradient(to left,rgb(255, 60, 0) 20%,rgb(201, 51, 6)100%);
+                color:black;
+                text-align: center;
+                font-family: sans-serif;
+            } 
+            .wrapper {
+                width: 500px;
+                height: 500px;
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%, -50%);
+                border-radius: 5px;
+                background-image: linear-gradient(to top, #accbee 5%, #e7f0fd 100%);
+                overflow: hidden;
+                box-shadow: 10px 10px rgb(20, 20, 20);
+              }
+        </style>
+		<SCRIPT LANGUAGE="JavaScript"> 
+			jour = ['Dimanche','Lundi','Mardi','Mercredi','Jeudi','Vendredi','Samedi'];
+			
+			//Une fonction qui renvoie le bon indice du jour de votre naissance
+			//Attention, l'ann�e doit �tre entre 1900 et 2001
+
+			function jourDeNaissance(j,m,a) {
+				
+				var f = 0;
+ 				var g = 0;
+ 				if (m <= 2) {
+ 					
+ 					g = a-1;
+ 					
+ 					f = m+13;
+    			} 
+    			else {
+    				
+    				g = a;
+    				
+    				f = m+1;
+    			}
+ 				return (Math.floor(365.25*g) + Math.floor(30.6001*f) + j-621049) % 7;
+			}
+		</SCRIPT>
+	</head>
+    <body>
+        <div class="wrapper">
+            <label for="">Date du jour:</label>
+		    <input id="Aujourdhui" type="date" name="date" value="" readonly><br>
+            <script>
+            document.getElementById("Aujourdhui").valueAsDate = new Date();
+            let saisie = prompt("Saisissez votre date de naissance:","JJ/MM/AAAA");
+            let jour = saisie.substr(0,2);
+            let mois = saisie.substr(3,2);
+            let annee = saisie.substr(6,4);
+            document.write("Tu es ne le: ",jour,"/",mois,"/",annee);
+            document.write("<br>Voici donc ton jour de naissance: <br>");
+            document.write(jourDeNaissance(jour,mois,annee));
+            </script>
+        </div>
+    </body>
+</html>
