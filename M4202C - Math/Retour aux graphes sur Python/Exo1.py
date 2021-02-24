@@ -1,9 +1,9 @@
-import math
-from collections import deque
+import numpy as np
 
 mat1=[[1,0,0,0],[0,0,0,0],[0,0,0,0],[0,0,0,0]]
 G={1:[1,2],2:[2,3,4],3 :[],4 :[2]}
 mat2=[[0,1,0,1,0,0],[0,0,0,0,0,0],[0,1,0,0,1,0],[0,0,0,0,0,1],[0,0,1,1,0,0],[0,0,0,0,0,0]]
+graph = np.array([[0,2,100,3,100,100,100],[100,0,7,100,1,100,100],[100,100,0,100,100,2,100],[100,1,100,0,100,100,100],[100,100,7,100,0,100,4],[100,100,100,100,4,0,2],[1,100,100,1,100,100,0]])
 
 poids=[[float('inf'),2,6,3],
 [2,float('inf'),8,5],
@@ -176,8 +176,20 @@ def dijkstra(mat,s):
                    pred[k]=sommetTraite          
     return dist, pred
         
+def BellmanFord(mat, src):
+        dist=[]
+        for i in range(len(mat)): #initialisation des variables
+            dist[i] = [float("Inf")] 
+        dist[src] = 0
+   
+        for j in range(len(mat) - 1):  #relaxe 
+            for u, v, w in mat:  
+                if dist[u] != float("Inf") and dist[u] + w < dist[v]:  
+                        dist[v] = dist[u] + w  
+        #retourne dist  
+        return dist     
     
-    
+
     
 
 print(extract_min(poids[0])) 
