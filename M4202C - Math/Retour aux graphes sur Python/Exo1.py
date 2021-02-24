@@ -189,7 +189,31 @@ def BellmanFord(mat, src):
         #retourne dist  
         return dist     
     
+"""def FloydWarshall(mat,s): ça ne marche pas encore
+    print("Adjacency matrix")
+    print (graph)
+    v = len(graph)
 
+    # path reconstruction matrix
+    p = np.zeros(graph.shape)
+    for i in range(0,v):
+        for j in range(0,v):
+            p[i,j] = graph[i,j]
+        
+       
+    for k in range(0,v):
+        print ('D',k+1,"--------------------")
+        for i in range(0,v):
+            for j in range(0,v):
+                if p[i,j] > p[i,k] + p[k,j]:
+                    print (i+1,"-",j+1,":",p[i,j], p[i,j] = p[i,k] + p[k,j])
+                    print (">",p[i,k],'+',p[k,j],'=',p[i,j],"change")
+                else:
+                    print (i+1,"-",j+1,":",p[i,j],
+                    "<=",p[i,k],'+',p[k,j],'=',p[i,j])
+                
+    print (p)"""
+    
     
 
 print(extract_min(poids[0])) 
