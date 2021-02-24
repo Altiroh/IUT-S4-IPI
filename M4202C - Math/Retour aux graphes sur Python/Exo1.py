@@ -5,6 +5,11 @@ mat1=[[1,0,0,0],[0,0,0,0],[0,0,0,0],[0,0,0,0]]
 G={1:[1,2],2:[2,3,4],3 :[],4 :[2]}
 mat2=[[0,1,0,1,0,0],[0,0,0,0,0,0],[0,1,0,0,1,0],[0,0,0,0,0,1],[0,0,1,1,0,0],[0,0,0,0,0,0]]
 
+poids=[[float('inf'),2,6,3],
+[2,float('inf'),8,5],
+[5,8,float('inf'),10],
+[5,5,10,float('inf')]]
+
 def succ(mat,som):
     listSucc=[]
     for i in range (len(mat[som])):
@@ -140,18 +145,41 @@ def decomN(mat):
                 file.append(j)
     return file
 
-def dijkstra(graph, vertex):
-    queue = deque([vertex])
-    distance = {vertex: 0}
-    while queue:
-        t = queue.popleft()
-        for voisin in graph[t]:
-                queue.append(voisin)
-                nouvelle_distance = distance[t] + graph[t][voisin]
-                if(voisin not in distance or nouvelle_distance < distance[voisin]):
-                    distance[voisin] = nouvelle_distance
-                    
-    return distance
-            
+def extract_min(lst):
+    ppv=float('inf') #PlusPetiteValeur
+    for i in range (len(lst)):
+        if(lst[i]<ppv):
+            ppv=i
+    return ppv
 
-print(decomN(mat1))
+
+def dijkstra(mat,s):
+    som=s
+    dist=[]
+    a_traiter=[]
+    pred=[]
+    sommetTraite=0
+    intermediaire=0
+    for i in range (len(mat)):#on référence les sommets de som et on initialise les listes
+        dist.append(float('inf'))
+        pred.append(None)
+        a_traiter.append(i)  
+    dist[som]=0             
+    while(a_traiter!=None):
+        for j in range(len(a_traiter)):
+           sommetTraite=extract_min(j)
+           a_traiter.remove(sommetTraite)
+           for k in range(len(mat[sommetTraite])):
+               intermediaire=dist[sommetTraite]+mat[sommetTraite][k]
+               if(intermediaire<dist[k]):
+                   dist[k]=intermediaire
+                   pred[k]=sommetTraite          
+    return dist, pred
+        
+    
+    
+    
+
+print(extract_min(poids[0])) 
+#test de la fonction extract_min  Fonctionnelle
+print(dijkstra(poids, 2))
